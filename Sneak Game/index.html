@@ -1,89 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Jogo da cobrinha</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="home.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Game</title>
   </head>
   <body>
-    <canvas id="stage" width="600" height="600"></canvas>
+    <h1 class="title">Snake Game</h1>
+    <h1 class="title-back">Snake Game</h1>
+    <p class="description">
+      Game created to learn more about JavaScript. Press space button to start
+      To move use:
+    </p>
+
+    <div class="info">
+      <h1 id="frase"></h1>
+      <h1 id="pontos"></h1>
+    </div>
+
+    <div class="buttons">
+      <div class="w-b" id="w"><h3>w</h3></div>
+      <div class="w-b" id="a"><h3>a</h3></div>
+      <div class="w-b" id="s"><h3>s</h3></div>
+      <div class="w-b" id="d"><h3>d</h3></div>
+    </div>
+    <div class="circle">
+      <canvas id="stage" width="600" height="600"></canvas>
+    </div>
     <script type="text/javascript">
       window.onload = function () {
+        var mensagem = document.getElementById("frase");
         var stage = document.getElementById("stage");
         var ctx = stage.getContext("2d");
         document.addEventListener("keydown", keyPush);
-        setInterval(game, 80);
-
-        const vel = 1;
-
-        var vx = (vy = 0);
-        var px = 10;
-        var py = 15;
+        setInterval(game, 90);
+        var pontos = document.getElementById("pontos");
+        let points = 0;
+        const speed = 1;
+        var speedX = (speedY = 0);
+        var positionX = 10;
+        var positionY = 15;
         var tp = 30;
         var qp = 20;
-        var ax = (ay = 15);
-
+        var appleX = (appleY = 15);
         var trail = [];
-        tail = 5;
+        tail = 1;
+        var head = trail[0];
+
+        function gameOver() {
+          points = 0;
+          pontos.textContent = points;
+          tail = 1;
+          mensagem.textContent = "Perdeu :(";
+        }
 
         function game() {
-          px += vx;
-          py += vy;
-          if (px < 0) {
-            px = qp - 1;
+          mensagem.textContent = "";
+          positionX += speedX;
+          positionY += speedY;
+          if (positionX < 0) {
+            positionX = qp - 1;
           }
-          if (px > qp - 1) {
-            px = 0;
+          if (positionX > qp - 1) {
+            positionX = 0;
           }
-          if (py < 0) {
-            py = qp - 1;
+          if (positionY < 0) {
+            positionY = qp - 1;
           }
-          if (py > qp - 1) {
-            py = 0;
+          if (positionY > qp - 1) {
+            positionY = 0;
           }
 
-          ctx.fillStyle = "black";
+          ctx.fillStyle = "white";
           ctx.fillRect(0, 0, stage.width, stage.height);
 
-          ctx.fillStyle = "red";
-          ctx.fillRect(ax * tp, ay * tp, tp, tp);
+          ctx.fillStyle = "#edf044";
+          ctx.fillRect(appleX * tp, appleY * tp, tp, tp);
 
-          ctx.fillStyle = "gray";
+          ctx.fillStyle = "#000";
           for (var i = 0; i < trail.length; i++) {
             ctx.fillRect(trail[i].x * tp, trail[i].y * tp, tp - 1, tp - 1);
-            if (trail[i].x == px && trail[i].y == py) {
-              vx = vy = 0;
-              tail = 1;
+            if (trail[i].x == positionX && trail[i].y == positionY) {
+              gameOver();
             }
           }
 
-          trail.push({ x: px, y: py });
+          trail.push({ x: positionX, y: positionY });
           while (trail.length > tail) {
             trail.shift();
           }
 
-          if (ax == px && ay == py) {
+          if (appleX == positionX && appleY == positionY) {
             tail++;
-            ax = Math.floor(Math.random() * qp);
-            ay = Math.floor(Math.random() * qp);
+            points++;
+            pontos.textContent = points;
+            appleX = Math.floor(Math.random() * qp);
+            appleY = Math.floor(Math.random() * qp);
           }
         }
 
         function keyPush(event) {
           switch (event.keyCode) {
-            case 37: // Left
-              vx = -vel;
-              vy = 0;
+            case 65: // Left
+              speedX = -speed;
+              speedY = 0;
               break;
-            case 38: // up
-              vx = 0;
-              vy = -vel;
+            case 87: // up
+              speedX = 0;
+              speedY = -speed;
               break;
-            case 39: // right
-              vx = vel;
-              vy = 0;
+            case 68: // right
+              speedX = speed;
+              speedY = 0;
               break;
-            case 40: // down
-              vx = 0;
-              vy = vel;
+            case 83: // down
+              speedX = 0;
+              speedY = speed;
               break;
             default:
               break;
