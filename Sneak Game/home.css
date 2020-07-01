@@ -169,22 +169,40 @@ canvas {
     .circle {
         top: 0%;
         left: 58%;
-        transform: scale(1.2);
+        transform: scale(1.4);
     }
 
     h1 {
         font-size: 80pt;
     }
 
-    p {
-        margin-left: 500px;
-        left: -9em;
-        top: -1em;
-        font-size: 25pt;
+    .info{
+        top: 20em;
+        left: 15em;
+    }
+    
+        #pontos{
+            margin-top: 0.2em;
+        }
+    
+        canvas {
+            background: #fff;
+            position: relative;
+            top: 13em;
+            right: 7.5em;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px #0000004b;
+        }
+
+    p{
+        margin-left: 300px;
+        left: -5em;
+        top: 10em;
+        font-size: 35pt;
     }
 
     .buttons {
-        transform: translate(12em, 5em) scale(0.8);
+        transform: translate(40em, 16em) scale(0.8);
     }
 
     #d {
