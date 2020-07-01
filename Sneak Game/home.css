@@ -1,0 +1,160 @@
+:root {
+    --bg-yellow: #edf044;
+    --bg-blue: #00c2ff;
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+  
+  body {
+    margin: 0px;
+    overflow: hidden;
+  }
+  
+  h1 {
+    font-size: 60pt;
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  .title {
+    color: var(--bg-blue);
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .title-back {
+    color: var(--bg-yellow);
+    position: absolute;
+    top: 3px;
+    left: 12px;
+    z-index: -1;
+    font-family: "Roboto", sans-serif;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  p{
+    font-family: "Roboto", sans-serif;
+    font-size: 20pt;
+    justify-content: center;
+    position: relative;
+    left: 90px;
+  }
+  
+  .description {
+    margin-right: 1000px;
+    text-align: center;
+  }
+  
+  .w-b {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    font-size: 40pt;
+    background: #000;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px black;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .w-b h3 {
+    margin-top: 10px;
+  }
+  
+  .buttons {
+    position: relative;
+    transform: translate(2.5em, 5em) scale(0.7);
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+  }
+  
+  #d {
+    left: 8%;
+  }
+  
+  #a {
+    left: -8%;
+  }
+  
+  #w {
+    bottom: 10%;
+  }
+  
+  #s {
+    margin-top: 1.9em;
+    top: 20%;
+  }
+  
+  .circle {
+    width: 1062px;
+    height: 1062px;
+    border-radius: 60%;
+    position: absolute;
+    background: var(--bg-blue);
+    z-index: -2;
+    left: 38em;
+    top: -10em;
+    border: none;
+    box-shadow: 0px 0px 30px #0000004b;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  canvas {
+    background: #fff;
+    position: relative;
+    top: 13em;
+    right: 6em;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #0000004b;
+  }
+  
+  .info {
+    display: none;
+  }
+  
+  @media only screen and (min-width: 1920px) {
+  
+      .circle{
+          top: 0%;
+          left: 58%;
+          transform: scale(1.2);
+      }
+  
+      h1{
+          font-size: 80pt;
+      }
+  
+      p{
+          margin-left: 500px;
+          left: -9em;
+          top: -1em;
+          font-size: 25pt;
+      }
+  
+      .buttons{
+           transform: translate(12em, 5em) scale(0.8);  
+      }
+  
+      #d {
+          left: 6%;
+        }
+        
+        #a {
+          left: -6%;
+        }
+        
+        #w {
+          bottom: 10%;
+        }
+        
+        #s {
+          margin-top: 1.9em;
+          top: 20%;
+        }
+  
+  }
+  
+  
