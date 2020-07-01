@@ -1,50 +1,53 @@
 :root {
     --bg-yellow: #edf044;
     --bg-blue: #00c2ff;
-  }
-  
-  @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-  
-  body {
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+    background-color: whitesmoke;
     margin: 0px;
     overflow: hidden;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 60pt;
     position: relative;
     margin-left: 20px;
-  }
-  
-  .title {
+}
+
+.title {
     color: var(--bg-blue);
     font-family: "Roboto", sans-serif;
-  }
-  
-  .title-back {
-    color: var(--bg-yellow);
+}
+
+.title-back {
     position: absolute;
     top: 3px;
     left: 12px;
     z-index: -1;
     font-family: "Roboto", sans-serif;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-  }
-  
-  p{
+    animation: 10s ease 0s infinite alternate title;
+}
+
+p {
+    font-weight: bold;
     font-family: "Roboto", sans-serif;
     font-size: 20pt;
     justify-content: center;
     position: relative;
-    left: 90px;
-  }
-  
-  .description {
+    left: 1em;
+    top: 10em;
+}
+
+.description {
     margin-right: 1000px;
     text-align: center;
-  }
-  
-  .w-b {
+}
+
+.w-b {
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -56,37 +59,37 @@
     box-shadow: 0px 0px 10px black;
     position: absolute;
     z-index: -1;
-  }
-  
-  .w-b h3 {
+}
+
+.w-b h3 {
     margin-top: 10px;
-  }
-  
-  .buttons {
+}
+
+.buttons {
     position: relative;
-    transform: translate(2.5em, 5em) scale(0.7);
+    transform: translate(12em, 10em) scale(0.6);
     font-family: "Roboto", sans-serif;
     color: #fff;
-  }
-  
-  #d {
+}
+
+#d {
     left: 8%;
-  }
-  
-  #a {
+}
+
+#a {
     left: -8%;
-  }
-  
-  #w {
+}
+
+#w {
     bottom: 10%;
-  }
-  
-  #s {
+}
+
+#s {
     margin-top: 1.9em;
     top: 20%;
-  }
-  
-  .circle {
+}
+
+.circle {
     width: 1062px;
     height: 1062px;
     border-radius: 60%;
@@ -100,61 +103,104 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-  }
-  
-  canvas {
+}
+
+canvas {
     background: #fff;
     position: relative;
     top: 13em;
     right: 6em;
     border-radius: 10px;
     box-shadow: 0px 0px 20px #0000004b;
-  }
-  
-  .info {
+}
+
+.info {
+    width: 20em;
+    height: 10em;
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    top: 14em;
+    left: 10em;
+    color: #fff;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 50px;
+    /* animation-name: pontos;
+    animation-duration: 4s;
+    animation-iteration-count: infinite; */
+    animation: 10s ease 0s infinite alternate pontos;
+}
+
+@keyframes pontos {
+    0%   {background-color: #df3939;}
+    50%  {background-color: yellow;}
+    100%  {background-color: #5757db;}
+}
+
+@keyframes title {
+    0%   {color: #df3939;}
+    50%  {color: yellow;}
+    100%  {color: #5757db;}
+}
+
+#pontos{
+    text-align: center;
+    margin-top: 0.5em;
+    margin-left: 0em;
+    text-shadow: 0px 0px 10px #0000001e;
+    font-family: 'Roboto', sans-serif;
+}
+
+#frase {
     display: none;
-  }
-  
-  @media only screen and (min-width: 1920px) {
-  
-      .circle{
-          top: 0%;
-          left: 58%;
-          transform: scale(1.2);
-      }
-  
-      h1{
-          font-size: 80pt;
-      }
-  
-      p{
-          margin-left: 500px;
-          left: -9em;
-          top: -1em;
-          font-size: 25pt;
-      }
-  
-      .buttons{
-           transform: translate(12em, 5em) scale(0.8);  
-      }
-  
-      #d {
-          left: 6%;
-        }
-        
-        #a {
-          left: -6%;
-        }
-        
-        #w {
-          bottom: 10%;
-        }
-        
-        #s {
-          margin-top: 1.9em;
-          top: 20%;
-        }
-  
-  }
-  
-  
+}
+
+.animation {
+    position: absolute;
+    z-index: -3;
+    top: 0;
+    transform: scale(5);
+    left: 10%;
+    opacity: 0.05;
+}
+
+@media only screen and (min-width: 1920px) {
+    .circle {
+        top: 0%;
+        left: 58%;
+        transform: scale(1.2);
+    }
+
+    h1 {
+        font-size: 80pt;
+    }
+
+    p {
+        margin-left: 500px;
+        left: -9em;
+        top: -1em;
+        font-size: 25pt;
+    }
+
+    .buttons {
+        transform: translate(12em, 5em) scale(0.8);
+    }
+
+    #d {
+        left: 6%;
+    }
+
+    #a {
+        left: -6%;
+    }
+
+    #w {
+        bottom: 10%;
+    }
+
+    #s {
+        margin-top: 1.9em;
+        top: 20%;
+    }
+}
