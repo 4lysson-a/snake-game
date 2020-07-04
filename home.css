@@ -1,6 +1,6 @@
 :root {
     --bg-yellow: #edf044;
-    --bg-blue: #00c2ff;
+    --bg-blue: #0099ff;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
@@ -89,27 +89,32 @@ p {
     top: 20%;
 }
 
+#wave{
+    transform: rotate(-90deg) translate(0%, -30%);
+    position: absolute;
+    z-index: -3;
+}
+
 .circle {
     width: 1062px;
     height: 1062px;
-    border-radius: 60%;
     position: absolute;
     background: var(--bg-blue);
     z-index: -2;
-    left: 38em;
+    left: 46em;
     top: -10em;
     border: none;
-    box-shadow: 0px 0px 30px #0000004b;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
 
 canvas {
+
     background: #fff;
     position: relative;
     top: 13em;
-    right: 6em;
+    right: 15em;
     border-radius: 10px;
     box-shadow: 0px 0px 20px #0000004b;
 }
