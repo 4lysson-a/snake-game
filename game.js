@@ -21,8 +21,8 @@ window.onload = function () {
         points = 0;
         pontos.textContent = points;
         tail = 1;
-        //mensagem.textContent = "Perdeu :(";
-        alert("PERDEMO, vc fez: ", points);
+        mensagem.textContent = "Perdeu :(";
+        //alert("PERDEMO, vc fez: ", points);
     }
 
     function game() {
