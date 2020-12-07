@@ -6,7 +6,7 @@ window.onload = function () {
     setInterval(game, 90);
     var pontos = document.getElementById("pontos");
     let points = 0;
-    const speed = 0.8;
+    const speed = 1;
     var speedX = (speedY = 0);
     var positionX = 10;
     var positionY = 15;
